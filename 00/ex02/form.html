@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORM</title>
+<script>
+function displayFormContents() {
+    var out = '';
+
+    out += 'Firstname = ' + document.getElementById('firstname').value + '\n';
+    out += 'Name = '      + document.getElementById('name').value      + '\n';
+    out += 'Phone = '     + document.getElementById('phone').value     + '\n';
+    out += 'Age = '       + document.getElementById('age').value       + '\n';
+    out += 'Email = '     + document.getElementById('email').value     + '\n';
+
+    out += 'Gender = ';
+    if (document.getElementById('gender_male').checked == true)
+        out += document.getElementById('gender_male').value;
+    if (document.getElementById('gender_female').checked == true)
+        out += document.getElementById('gender_female').value;
+    if (document.getElementById('gender_other').checked == true)
+        out += document.getElementById('gender_other').value;
+    out += '\n';
+
+    if (document.getElementById('student').checked == true)
+        out += 'Student at 42 = yes';
+    else
+        out += 'Student at 42 = no';
+
+    alert(out);
+}
+</script>
+</head>
+<body>
+
+<form>
+    <label for="firstname">Firstname:</label><br>
+    <input type="text" id="firstname" name="firstname"><br>
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age"><br>
+
+    <label for="phone">Phone:</label><br>
+    <input type="tel" id="phone" name="phone"><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="student">Student at 42?</label>
+    <input type="checkbox" id="student" name="student"><br>
+
+    <p>Gender:</p>
+    <input type="radio" id="gender_male" name="gender" value="Male">
+    <label for="gender_male">Male</label>
+    <input type="radio" id="gender_female" name="gender" value="Female">
+    <label for="gender_female">Female</label>
+    <input type="radio" id="gender_other" name="gender" value="Other">
+    <label for="gender_other">Other</label>
+    <br>
+
+    <button type="button" onclick="displayFormContents()">Submit</button>
+</form>
+
+</body>
+</html>
