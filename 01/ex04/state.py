@@ -1,4 +1,4 @@
-import sys  # sys 모듈은 스크립트에서 기본적으로 사용 가능합니다.
+import sys
 
 def find_state(capital_city):
     states = {
