@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+</head>
+<body>
+    <header>
+        <h1>{title}</h1>
+    </header>
+  
+    <section>
+        <article>
+            <h2>Personal Info</h2>
+            <p><strong>First name:</strong> {first_name}</p>
+            <p><strong>Last name:</strong> {last_name}</p>
+            <p><strong>Age:</strong> {age}</p>
+            <p><strong>Profession:</strong> {profession}</p>
+            <p><strong>Mobile:</strong> {mobile}</p>
+            <p><strong>Email:</strong> {email}</p>
+        </article>
+    </section>
+
+</body>
+</html>
