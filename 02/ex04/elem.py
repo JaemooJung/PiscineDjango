@@ -67,5 +67,15 @@ class Elem:
                                                 for elem in content])))
 
 
-# if __name__ == '__main__':
-#     [...]
+def test():
+    img = Elem('img', {'src': 'http://i.imgur.com/pfp3T.jpg'}, tag_type='simple')
+    h1 = Elem('h1', content=Text('\"Oh no, not again!\"'))
+    body = Elem('body', content=[h1, img])
+    head = Elem('head', content=Elem('title', content=Text('\"Hello ground!\"')))
+    html = Elem('html', content=[head, body])
+    print(html)
+
+
+if __name__ == '__main__':
+    test()
+
