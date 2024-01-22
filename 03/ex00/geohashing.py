@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import sys
 import antigravity
@@ -10,6 +10,7 @@ def main():
     if len(sys.argv) != 4:
         print(usage_message)
         return
+    
     try:
         antigravity.geohash(float(sys.argv[2]), 
                             float(sys.argv[3]), 
