@@ -17,6 +17,7 @@ def roads_to_philosophy(path):
     visited_titles = []
     count = 0
 
+    path = path.strip().replace(' ', '_')
     while True:
         url = base_url + '/wiki/' + path
         response = requests.get(url)
@@ -43,9 +44,15 @@ def roads_to_philosophy(path):
 
         path = next_link.split('/')[-1]
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) != 2:
-        print('Usage: python roads_to_philosophy.py [word]')
+        print('Usage: python3 roads_to_philosophy.py [word]')
         sys.exit(1)
+    try:
+      roads_to_philosophy(sys.argv[1])
+    except Exception as e:
+      print(f'Error: {e}')
+      sys.exit(1)
 
-    roads_to_philosophy(sys.argv[1])
+if __name__ == "__main__":
+    main()
