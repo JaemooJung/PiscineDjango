@@ -1,0 +1,47 @@
+{% extends 'ex01/base.html' %}
+{% load static %}
+
+{% block title %}Ex01: Template engine{% endblock %}
+
+{% block stylesheet %} <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}"> {% endblock %}
+
+{% block content %}
+
+<h1>Template engine</h1>
+
+<p>
+  Django's template engine is a built-in subsystem that constructs text output based on templates and context. 
+  A template is a text document, or a Python string, marked-up using the Django template language. 
+  A context is a dictionary mapping keys to their corresponding variable values. 
+  The template engine replaces variables with their values and executes tags which have special meanings.
+</p>
+
+<h2>Blocks</h2>
+
+<p>
+  In Django templates, block tags define areas that child templates can override. 
+  In this exercise, title, stylesheet, and content are blocks that can be filled with content in templates that extend this one. 
+  This is useful for creating a base template that contains all the common elements of your site and defines blocks that child templates can override.
+</p>
+
+<h2>Loops</h2>
+
+<p>
+  Django's template language includes a for tag for looping over items in a list. 
+  Inside the loop, you can use certain tag to display the current item.
+</p>
+
+<h2>if control structure</h2>
+<p>
+  Django's template language includes if for conditional statements. 
+  You can use elif and else as well. The conditions in these statements can use variables from the context.
+</p>
+
+<h2>Display of Context Variables</h2>
+<p>
+  You can display context variables in a Django template by wrapping the variable name in double curly braces. 
+  When the template engine renders the template, it replaces variable_name with the value of variable_name from the context. 
+  If variable_name is a complex object, you can access its attributes using dot notation, like variable_name.attribute.
+</p>
+
+{% endblock %}
