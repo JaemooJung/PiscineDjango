@@ -22,7 +22,7 @@ def init(request):
         release_date DATE NOT NULL
         );
       """)
-      curs.execute('commit')
+    conn.commit()
     return HttpResponse("OK")
   except Exception as e:
     return HttpResponse(e)
