@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form and History</title>
+  </head>
+  <body>
+    <h1>Form and History</h1>
+    <h2>Fill out the form and submit</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_table }}
+      <input type="submit" value="Submit" />
+    </form>
+    <h2>History</h2>
+    {% for entry in histories %}
+    <p>{{ entry }}</p>
+    {% endfor %}
+  </body>
+</html>
