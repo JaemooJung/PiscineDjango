@@ -69,10 +69,10 @@ def display(request):
     try:
         conn = ex02_db_connect()
 
-
         query = f"""
             SELECT * FROM {TABLE_NAME};
             """
+        
         with conn.cursor() as curs:
             curs.execute(query)
             movies = curs.fetchall()
