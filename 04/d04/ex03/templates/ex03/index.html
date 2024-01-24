@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fifty shades of colors</title>
+    <style>
+      td, th {
+        width: 80px;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fifty shades of colors</h1>
+    <div>
+      <table>
+        <tr>
+          <th style="color: #000000">black</th>
+          <th style="color: #FF0000">red</th>
+          <th style="color: #00FF00">green</th>
+          <th style="color: #0000FF">blue</th>
+        </tr>
+        {% for i in shades %}
+        <tr>
+          <td style="background-color: #{{i}}{{i}}{{i}}"></td>
+          <td style="background-color: #{{i}}0000"></td>
+          <td style="background-color: #00{{i}}00"></td>
+          <td style="background-color: #0000{{i}}"></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
