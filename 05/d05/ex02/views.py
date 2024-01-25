@@ -78,5 +78,5 @@ def display(request):
             movies = curs.fetchall()
         return render(request, 'ex02/display.html', {"movies": movies})
     except Exception as e:
-        return HttpResponse(e)
+        return HttpResponse("No data available")
 

@@ -24,5 +24,5 @@ def display(request):
       raise Movies.DoesNotExist
     return render(request, 'ex03/display.html', {"movies": movies})
   except Exception as e:
-    return HttpResponse(f"No data available: {e}")
+    return HttpResponse("No data available")
 
