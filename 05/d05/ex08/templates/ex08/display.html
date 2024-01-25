@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>People and Planets</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <th>name</th>
+          <th>homeworld</th>
+          <th>climate</th>
+        </tr>
+        {% for data in datas %}
+        <tr>
+          <td>{{ data.0 }}</td>
+          <td>{{ data.1 }}</td>
+          <td>{{ data.2 }}</td>
+        </tr>
+        {% endfor %}
+      </toby>
+    </table>
+  </body>
+</html>
