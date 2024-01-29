@@ -1,0 +1,31 @@
+{% load filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>People of Starwars</title>
+  </head>
+  <body>
+    <h1>Search people of Starwars</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Search</button>
+    </form>
+
+    {% if results is not None %}
+    <div class="results">
+        {% if results|length > 0 %}
+            <ul>
+                {% for r in results %}
+                    <li>{{ r|join_with:" - " }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h2>Nothing corresponding to your research</h2>
+        {% endif %}
+    </div>
+    {% endif %}
+  </body>
+</html>
