@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'ex.middleware.SessionMiddleware',
 ]
 
 ROOT_URLCONF = 'd06.urls'
@@ -124,6 +125,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-USERNAMES = [
+RANDOM_USERNAMES = [
     'Olivia', 'Emma', 'Ava', 'Sophia', 'Isabella', 'Liam', 'Noah', 'Oliver', 'William', 'Elijah'
 ]

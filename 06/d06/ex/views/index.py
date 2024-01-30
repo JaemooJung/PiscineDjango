@@ -1,13 +1,16 @@
 from django.views import View
 from django.shortcuts import render
-from django.http import HttpResponse, HttpRequest
-from django.conf import settings
-import random
+from ..forms import TipForm
+from ..models import Tip
 
 class Index(View):
     def get(self, request):
-        if not request.session.get('username'):
-            request.session['username'] = random.choice(settings.USERNAMES)
-            request.session.set_expiry(42)
-        request.user.username = request.session.get('username')
-        return render(request, 'index.html')
+        try:
+            tips = Tip.objects.all().order_by('-date')
+        except Exception as e:
+            tips = []
+        context = {
+            'tip_form': TipForm(),
+            'tips': tips
+        }
+        return render(request, 'index.html', context)

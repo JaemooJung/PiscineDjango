@@ -2,6 +2,79 @@
 {% load bootstrap3 %}
 
 {% block content %}
-    <h1>Home</h1>
-    <p> Welcome to the home page!</p>
+    {% if user.is_authenticated %}
+
+    <!-- Button trigger modal -->
+    <button
+    type="button"
+    class="btn btn-primary"
+    data-toggle="modal"
+    data-target="#createtip"
+    >
+    Create Tip!
+    </button>
+
+    <!-- Modal -->
+    <div
+        class="modal fade"
+        id="createtip"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="createtipLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header" style="display: flex; flex-direction: row">
+                <h5
+                    class="modal-title inline"
+                    style="width: 100%"
+                    id="createtipLabel"
+                >
+                Create Tip!
+                </h5>
+                <button 
+                    type="button" 
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                >
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{% url 'tip' %}" method="post" class="form">
+                <div class="modal-body">
+                {% csrf_token %} 
+                {% bootstrap_form tip_form %}
+                </div>
+                <div class="modal-footer">
+                {% buttons %}
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Close
+                </button>
+                {% endbuttons %}
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <ul class="list-group">
+        {% for tip in tips %}
+        <li class="list-group-item" style="margin-top: 10px; margin-bottom: 10px">
+          <div>
+            <h5> {{ tip.author }} </h5>
+            <p>{{ tip.content }}</p>
+            <div style="display: flex; justify-content: space-between;">
+              <small>{{ tip.date }}</small>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+    </ul>
+
 {% endblock %}
