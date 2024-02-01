@@ -1,1 +1,2 @@
-from .tip import Tip
+from .user import User
+from .tip import TipModel

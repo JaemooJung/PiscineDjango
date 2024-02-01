@@ -1,1 +1,2 @@
-from .tip import TipForm
+from .tip import *
+from .signup import *

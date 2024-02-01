@@ -128,3 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 RANDOM_USERNAMES = [
     'Olivia', 'Emma', 'Ava', 'Sophia', 'Isabella', 'Liam', 'Noah', 'Oliver', 'William', 'Elijah'
 ]
+
+AUTH_USER_MODEL = 'ex.User'

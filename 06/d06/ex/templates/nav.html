@@ -19,7 +19,10 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Hello {{ request.user.username }}!
+              Hello {{ request.user.username }} !
+              {% if request.user.is_authenticated %}
+              (reputation: {{ request.user.reputation }})
+              {% endif %}
             </a>
             <ul class="dropdown-menu">
               {% if request.user.is_authenticated %}
