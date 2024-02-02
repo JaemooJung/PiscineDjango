@@ -1,0 +1,68 @@
+[
+    {
+        "model": "myawesomearticles.article",
+        "pk": 1,
+        "fields": {
+            "title": "Article 1",
+            "author": 1,
+            "synopsis": "Lorem ipsum",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "created": "2024-02-02T00:00:00Z"
+        }
+    },
+    {
+        "model": "myawesomearticles.article",
+        "pk": 2,
+        "fields": {
+            "title": "Article 2",
+            "author": 1,
+            "synopsis": "Lorem ipsum",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "created": "2024-02-02T00:00:00Z"
+        }
+    },
+    {
+        "model": "myawesomearticles.article",
+        "pk": 3,
+        "fields": {
+            "title": "Article 3",
+            "author": 2,
+            "synopsis": "Lorem ipsum",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "created": "2024-02-02T00:00:00Z"
+        }
+    },
+    {
+        "model": "myawesomearticles.article",
+        "pk": 4,
+        "fields": {
+            "title": "Article 4",
+            "author": 2,
+            "synopsis": "Lorem ipsum",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "created": "2024-02-02T00:00:00Z"
+        }
+    },
+    {
+        "model": "myawesomearticles.article",
+        "pk": 5,
+        "fields": {
+            "title": "Article 5",
+            "author": 3,
+            "synopsis": "Lorem ipsum",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "created": "2024-02-02T00:00:00Z"
+        }
+    },
+    {
+        "model": "myawesomearticles.article",
+        "pk": 6,
+        "fields": {
+            "title": "Article 6",
+            "author": 3,
+            "synopsis": "Lorem ipsum",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "created": "2024-02-02T00:00:00Z"
+        }
+    }
+]
