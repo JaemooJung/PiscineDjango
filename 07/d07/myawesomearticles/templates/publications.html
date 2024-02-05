@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 
 {% block title %} Publications {% endblock title %}
+{% block body_title %}Publications{% endblock body_title %}
+{% block body_subtitle%}Your publications{% endblock body_subtitle%}
 
 {% block content %}
-  <h2>Publications</h2>
-  <a href="{% url 'publish' %}">Publish a new article</a>
-  <table>
+<a href="{% url 'publish' %}" class="btn btn-primary mt-3 mb-3">Publish a new article</a>
+  <table class="table">
     <thead>
       <tr>
         <th>Title</th>
         <th>Synopsis</th>
         <th>Created</th>
-        <th>Detail</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +21,7 @@
           <td>{{ article.title }}</td>
           <td>{{ article.synopsis }}</td>
           <td>{{ article.created }}</td>
-          <td><a href="{% url 'article_detail' article.pk %}">Detail</a></td>
+          <td><a href="{% url 'article_detail' article.pk %}" class="btn btn-secondary">Detail</a></td>
         </tr>
       {% endfor %}
     </tbody>

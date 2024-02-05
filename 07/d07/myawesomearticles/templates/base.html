@@ -1,15 +1,22 @@
 {% load static %}
+{% load django_bootstrap5 %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    {% bootstrap_css %} {% bootstrap_javascript %}
     <title>{% block title %}{% endblock title %} | My awesome articles</title>
   </head>
   <body>
     <div class="container">
+      {% autoescape off %}{% bootstrap_messages %}{% endautoescape %} 
+      <div class="d-flex align-items-baseline">
+        <h1>{% block body_title %}{% endblock body_title %}</h1>
+        <h3 style="margin-left: 1rem !important;" class="text-secondary">{% block body_subtitle %}{% endblock body_subtitle %}</h3>
+      </div>
+      <hr />
       {% include "nav.html" %}
-
       {% block content %}
       {% endblock content %}
     </div>

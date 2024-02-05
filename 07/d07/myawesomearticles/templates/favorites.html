@@ -2,11 +2,19 @@
 
 {% block title %} Favorites {% endblock title %}
 
+{% block body_title %} Favorites {% endblock body_title %}
+{% block body_subtitle %} Your favorite articles {% endblock body_subtitle %}
+
 {% block content %}
-  <h2>Favorites</h2>
-  <ul>
-    {% for favorite in favorites %}
-      <li><a href="{% url 'article_detail' favorite.article.pk %}">{{ favorite.article.title }}</a></li>
-    {% endfor %}
-  </ul>
+  <div class="container-fluid mt-4">
+    <ul class="list-group">
+      {% for favorite in favorites %}
+        <li class="list-group-item">
+          <a href="{% url 'article_detail' favorite.article.pk %}">
+            {{ favorite.article.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}

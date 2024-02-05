@@ -1,31 +1,38 @@
 {% extends "base.html" %}
+{% load django_bootstrap5 %}
 
-{% block title %} Articles {% endblock title %}
+{% block title %}Articles{% endblock title %}
+
+{% block body_title %}Articles{% endblock body_title %}
+{% block body_subtitle%}Share your awesome articles!{% endblock body_subtitle %}
 
 {% block content %}
-  <h2>Articles</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Synopsis</th>
-        <th>Writer</th>
-        <th>Created</th>
-        <th>When</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for article in articles %}
-          <tr>
-            <td>{{ article.title }}</td>
-            <td>{{ article.synopsis|truncatechars:20 }}</td>
-            <td>{{ article.author }}</td>
-            <td>{{ article.created }}</td>
-            <td>{{ article.created|timesince }}</td>
-            <td><a href="{% url 'article_detail' article.pk %}">Read</a></td>
-          </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Synopsis</th>
+          <th>Writer</th>
+          <th>Created</th>
+          <th>When</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for article in articles %}
+            <tr>
+              <td>{{ article.title }}</td>
+              <td>{{ article.synopsis|truncatechars:20 }}</td>
+              <td>{{ article.author }}</td>
+              <td>{{ article.created }}</td>
+              <td>{{ article.created|timesince }} ago</td>
+              <td><a href="{% url 'article_detail' article.pk %}"
+                class="btn btn-primary">Read</a></td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  
 {% endblock %}

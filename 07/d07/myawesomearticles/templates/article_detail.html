@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %} 
+{% load static %}
 
-article detail: {{ article.title }}
+{% block title %} article detail: {{ article.title }} {% endblock title %} 
 
-{% endblock title %} 
+{% block body_title %} Aricle detail {% endblock body_title %}
 
 
 {% block content %}
-  <h2>{{ article.title }}</h2>
-  <p>{{ article.synopsis }}</p>
-  <p>{{ article.content }}</p>
-  <p>Author: {{ article.author.username }}</p>
-  <p>Created: {{ article.created }}</p>
-  <form method="post">
-    {% csrf_token %}
-    <button type="submit">Add to favourite</button>
-  </form>
+  <div class="container-fluid mt-4">
+    <h2 class="mb-3">{{ article.title }}</h2> 
+    <p>{{ article.synopsis }}</p>
+    <p>{{ article.content }}</p>
+    <p>Author: {{ article.author.username }}</p>
+    <p>Created: {{ article.created }}</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">Add to favourite</button> 
+    </form>
+  </div>
 {% endblock %}
