@@ -14,6 +14,8 @@ class ArticleDetailView(DetailView):
     def post(self, request, *args, **kwargs):
         form = UserFavoriteArticleForm(request.POST)
         if form.is_valid():
+            if UserFavoriteArticle.objects.filter(user=request.user, article=self.get_object()).exists():
+                return redirect('article_detail', pk=self.get_object().pk)
             form.instance.user = request.user
             form.instance.article = self.get_object()
             form.save()
