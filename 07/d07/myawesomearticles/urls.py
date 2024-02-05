@@ -9,4 +9,6 @@ urlpatterns = [
     path('logout/', UserLogoutView.as_view(), name='logout'),
     path('favorites/', FavoritesView.as_view(), name='favorites'),
     path('publications/', PublicationsView.as_view(), name='publications'),
+    path('publish/', PublishView.as_view(), name='publish'),
+    path('register/', UserRegisterView.as_view(), name='register'),
 ]

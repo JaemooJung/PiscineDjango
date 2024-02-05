@@ -13,4 +13,8 @@ article detail: {{ article.title }}
   <p>{{ article.content }}</p>
   <p>Author: {{ article.author.username }}</p>
   <p>Created: {{ article.created }}</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Add to favourite</button>
+  </form>
 {% endblock %}

@@ -1,0 +1,17 @@
+<div class='nav'>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'articles' %}">Newest articles</a>
+    {% if user.is_authenticated %}
+        Logged as {{ user.username }}
+        <a href="{% url 'publications' %}">Publications</a>
+        <a href="{% url 'favorites' %}">Favorites</a>
+        <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+        </form>
+    {% else %}
+    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'login' %}">Login</a>
+
+    {% endif %}
+</div>
