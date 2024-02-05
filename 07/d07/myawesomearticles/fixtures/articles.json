@@ -5,8 +5,8 @@
         "fields": {
             "title": "Article 1",
             "author": 1,
-            "synopsis": "Lorem ipsum",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "synopsis": "Lorem ipsum ares ipsum dolor sit amet, consectetur adipiscing elit.",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "created": "2024-02-02T00:00:00Z"
         }
     },

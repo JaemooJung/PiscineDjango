@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.i18n import set_language
 from .views import *
 
 urlpatterns = [
@@ -11,4 +12,5 @@ urlpatterns = [
     path('publications/', PublicationsView.as_view(), name='publications'),
     path('publish/', PublishView.as_view(), name='publish'),
     path('register/', UserRegisterView.as_view(), name='register'),
+    path('i18n/setlang/', set_language, name='set_language'),
 ]

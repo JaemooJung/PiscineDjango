@@ -1,21 +1,22 @@
 {% extends "base.html" %}
 {% load django_bootstrap5 %}
+{% load i18n %}
 
-{% block title %}Articles{% endblock title %}
+{% block title %} {% trans "Articles" %} {% endblock title %}
 
-{% block body_title %}Articles{% endblock body_title %}
-{% block body_subtitle%}Share your awesome articles!{% endblock body_subtitle %}
+{% block body_title %} {% trans "Articles" %} {% endblock body_title %}
+{% block body_subtitle%} {% trans "Share your awesome articles!" %} {% endblock body_subtitle %}
 
 {% block content %}
   <div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Synopsis</th>
-          <th>Writer</th>
-          <th>Created</th>
-          <th>When</th>
+          <th> {% trans "Title" %} </th>
+          <th> {% trans "Synopsis"%} </th>
+          <th> {% trans "Writer" %} </th>
+          <th> {% trans "Created" %} </th>
+          <th> {% trans "When" %} </th>
           <th></th>
         </tr>
       </thead>
@@ -26,9 +27,9 @@
               <td>{{ article.synopsis|truncatechars:20 }}</td>
               <td>{{ article.author }}</td>
               <td>{{ article.created }}</td>
-              <td>{{ article.created|timesince }} ago</td>
+              <td>{{ article.created|timesince }} {% trans "ago" %} </td>
               <td><a href="{% url 'article_detail' article.pk %}"
-                class="btn btn-primary">Read</a></td>
+                class="btn btn-primary"> {% trans "Read"%} </a></td>
             </tr>
         {% endfor %}
       </tbody>

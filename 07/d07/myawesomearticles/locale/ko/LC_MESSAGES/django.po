@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-05 20:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: d07/myawesomearticles/templates/article_detail.html:5
+msgid "article detail: "
+msgstr "상세 내용: "
+
+#: d07/myawesomearticles/templates/article_detail.html:7
+msgid "Aricle detail"
+msgstr "상세 내용"
+
+#: d07/myawesomearticles/templates/article_detail.html:15
+msgid "Author: "
+msgstr "저자: "
+
+#: d07/myawesomearticles/templates/article_detail.html:16
+msgid "Created: "
+msgstr "작성일: "
+
+#: d07/myawesomearticles/templates/article_detail.html:19
+msgid "Add to favourite"
+msgstr "즐겨찾기"
+
+#: d07/myawesomearticles/templates/articles.html:5
+#: d07/myawesomearticles/templates/articles.html:7
+msgid "Articles"
+msgstr "글"
+
+#: d07/myawesomearticles/templates/articles.html:8
+msgid "Share your awesome articles!"
+msgstr "당신의 멋진 글을 공유하세요!"
+
+#: d07/myawesomearticles/templates/articles.html:15
+msgid "Title"
+msgstr "제목"
+
+#: d07/myawesomearticles/templates/articles.html:16
+msgid "Synopsis"
+msgstr "시놉시스"
+
+#: d07/myawesomearticles/templates/articles.html:17
+msgid "Writer"
+msgstr "저자"
+
+#: d07/myawesomearticles/templates/articles.html:18
+msgid "Created"
+msgstr "등록일"
+
+#: d07/myawesomearticles/templates/articles.html:19
+msgid "When"
+msgstr "발행"
+
+#: d07/myawesomearticles/templates/articles.html:30
+msgid "ago"
+msgstr "전에"
+
+#: d07/myawesomearticles/templates/articles.html:32
+msgid "Read"
+msgstr "읽기"
+
+#: d07/myawesomearticles/templates/nav.html:25
+msgid "Newest articles"
+msgstr "최신 글"
+
+#: d07/myawesomearticles/templates/nav.html:29
+msgid "Favorites"
+msgstr "즐겨찾기"
+
+#: d07/myawesomearticles/templates/nav.html:32
+msgid "Publications"
+msgstr "내 글"
+
+#: d07/myawesomearticles/templates/nav.html:43
+msgid "Logged as"
+msgstr "환영합니다, "
+
+#: d07/myawesomearticles/templates/nav.html:49
+msgid "Logout"
+msgstr "로그아웃"
+
+#: d07/myawesomearticles/templates/nav.html:54
+msgid "Register"
+msgstr "회원가입"
+
+#: d07/myawesomearticles/templates/nav.html:57
+msgid "Login"
+msgstr "로그인"

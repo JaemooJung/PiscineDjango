@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-
 {% load static %}
+{% load i18n %}
 
-{% block title %} article detail: {{ article.title }} {% endblock title %} 
+{% block title %} {% trans "article detail: " %} {{ article.title }} {% endblock title %} 
 
-{% block body_title %} Aricle detail {% endblock body_title %}
+{% block body_title %} {% trans "Aricle detail" %} {% endblock body_title %}
 
 
 {% block content %}
@@ -12,11 +12,11 @@
     <h2 class="mb-3">{{ article.title }}</h2> 
     <p>{{ article.synopsis }}</p>
     <p>{{ article.content }}</p>
-    <p>Author: {{ article.author.username }}</p>
-    <p>Created: {{ article.created }}</p>
+    <p> {% trans "Author: "%} {{ article.author.username }}</p>
+    <p>{% trans "Created: "%} {{ article.created }}</p>
     <form method="post">
       {% csrf_token %}
-      <button type="submit" class="btn btn-primary">Add to favourite</button> 
+      <button type="submit" class="btn btn-primary">{% trans "Add to favourite" %}</button> 
     </form>
   </div>
 {% endblock %}

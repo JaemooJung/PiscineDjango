@@ -1,10 +1,10 @@
 {% load django_bootstrap5 %}
-
+{% load i18n %}
 
 <nav class="navbar rounded navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <!-- Brand -->
-      <a class="navbar-brand" href="{% url 'home' %}">MyAwesomeArticles</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Home</a>
   
       <!-- Toggler/collapsibe Button -->
       <button class="navbar-toggler" 
@@ -22,14 +22,14 @@
         <!-- Left side items -->
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'articles' %}">Newest articles</a>
+            <a class="nav-link" href="{% url 'articles' %}"> {% trans "Newest articles" %}</a>
           </li>
           {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'favorites' %}">Favorites</a>
+                <a class="nav-link" href="{% url 'favorites' %}"> {% trans "Favorites" %} </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'publications' %}">Publications</a>
+                <a class="nav-link" href="{% url 'publications' %}"> {% trans "Publications"%} </a>
             </li>
 
           {% endif %}
@@ -40,21 +40,21 @@
         <ul class="navbar-nav ms-auto">
             {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link">Logged as {{ user.username }}</a>
+                    <a class="nav-link"> {% trans "Logged as" %}  {{ user.username }}</a>
                 </li>
                 
                 <li class="nav-item">
-                    <form method="post"  action="{% url 'logout' %}">
+                    <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-link nav-link">Logout</button>
+                    <button type="submit" class="btn btn-link nav-link"> {% trans "Logout" %}</button>
                     </form>
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    <a class="nav-link" href="{% url 'register' %}"> {% trans "Register"%}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-link" href="{% url 'login' %}"> {% trans "Login"%}</a>
                 </li>
             {% endif %}
         </ul>
