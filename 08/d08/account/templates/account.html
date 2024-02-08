@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block title %} Account {% endblock title %}
+
+{% block content%}
+<h1>Account</h1>
+<div id="errorMessages" style="display: none;" class="alert alert-danger"></div>
+
+<div id="userMenu" style="display: none;">
+  <p>Logged as <span id="usernameText"></span>
+  <button id="logoutButton" class="btn btn-primary">Logout</button>
+  </p>
+  <p><a href="{% url 'chatroom_list' %}">Let's go chat!</a></p>
+</div>
+
+<form id="loginForm" method="post" style="display: none;" >
+  {% bootstrap_form login_form %}
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+{% endblock %}
+
+{% block script %}
+<script>var CSRF_TOKEN = '{{ csrf_token }}';</script>
+<script src="{% static 'account_script.js' %}"></script>
+{% endblock %}

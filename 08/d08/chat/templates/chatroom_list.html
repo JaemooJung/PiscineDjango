@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block title %} Chatroom List {% endblock %}
+
+{% block content %}
+  <main>
+    <div class="container">
+      <h1 class="my-3">Chatrooms</h1>
+      <ul class="list-group">
+          {% for chatroom in chatrooms %}
+          <li class="list-group-item">
+              <a href="{% url 'chatroom' pk=chatroom.pk %}">{{ chatroom.name }}</a>
+          </li>
+          {% endfor %}
+      </ul>
+    </div>
+  </main>
+{% endblock %}
