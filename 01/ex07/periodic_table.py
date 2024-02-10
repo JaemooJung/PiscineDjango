@@ -17,13 +17,13 @@ def generate_html(elements):
     html = []
     
     html.append('''<!DOCTYPE html>
-        <html lang=\'en\'>   
-        <head>
-        <meta charset="utf-8">
-        <title>preiodic table</title>
-        </head>
-        <body>
-        <table>''')
+    <html lang=\'en\'>   
+    <head>
+    <meta charset="utf-8">
+    <title>preiodic table</title>
+    </head>
+    <body>
+    <table>''')
     
     # Generate HTML from the grid
     for row in element_grid:
@@ -44,17 +44,22 @@ def generate_html(elements):
     return ''.join(html)
 
 def main():
-    with open('./periodic_table.txt', 'r') as file:
-        lines = file.readlines()
-        elements = {}
-        for line in lines:
-            name, properties = parse_element(line)
-            elements[name] = properties
+    try:
+        with open('./periodic_table.txt', 'r') as file:
+            lines = file.readlines()
+            elements = {}
+            for line in lines:
+                name, properties = parse_element(line)
+                elements[name] = properties
+        html = generate_html(elements)
+        with open('periodic_table.html', 'w') as file:
+            file.write(html)
 
-    html = generate_html(elements)
+    except FileNotFoundError:
+        print('File not found')
+        return
 
-    with open('periodic_table.html', 'w') as file:
-        file.write(html)
+
 
 if __name__ == '__main__':
     main()
