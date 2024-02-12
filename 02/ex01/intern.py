@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 class Intern:
-  name: str = "My name? I’m nobody, an intern, I have no name."
+  name: str
 
-  def __init__(self, name):
+  def __init__(self, name="My name? I’m nobody, an intern, I have no name."):
     self.name = name
 
   def __str__(self):
@@ -21,4 +21,17 @@ class Coffee:
     return "This is the worst coffee you ever tasted."
 
 
+if __name__ == '__main__':
+  intern1 = Intern()
+  intern2 = Intern("Mark")
 
+  print(intern1)
+  print(intern2)
+
+  coffee = intern2.make_coffee()
+  print(coffee)
+
+  try:
+    intern1.work()
+  except Exception as e:
+    print(e)

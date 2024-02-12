@@ -12,7 +12,7 @@ def main():
     if not regex.match(path):
         return print("wrong extension, (required: .template)")
     if not os.path.isfile(path):
-        return print("does not exit file... : {}".format(path))
+        return print(f"does not exit file... : {path}")
     with open(path, "r") as f:
         template = "".join(f.readlines())
     try:
@@ -26,7 +26,7 @@ def main():
           email=settings.email
       )
     except Exception as e:
-      return print("Error: {}".format(e))
+      return print(f"Error: {e}")
     regex = re.compile("(\.template)")
     path = "".join([path[0:regex.search(path).start()], ".html"])
     with open(path, "w") as f:

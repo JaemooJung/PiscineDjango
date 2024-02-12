@@ -37,3 +37,21 @@ class Chocolate(HotBeverage):
 class Cappuccino(HotBeverage):
     def __init__(self):
         super().__init__("cappuccino", 0.45, "Un po’ di Italia nella sua tazza!")
+
+if __name__ == '__main__':
+  hot_beverage = HotBeverage()
+  coffee = Coffee()
+  tea = Tea()
+  chocolate = Chocolate()
+  cappuccino = Cappuccino()
+
+  print("--HotBeverage--")
+  print(hot_beverage)
+  print("--Coffee--")
+  print(coffee)
+  print("--Tea--")
+  print(tea)
+  print("--Chocolate--")
+  print(chocolate)
+  print("--Cappuccino--")
+  print(cappuccino)

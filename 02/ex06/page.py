@@ -1,5 +1,4 @@
 from elements import *
-import traceback
 
 class Page:
   _root_element = Elem()
@@ -92,3 +91,13 @@ class Page:
     
     return True
       
+if __name__ == "__main__":
+    head = Head(Title(Text('Hello ground!')))
+    ul = Ul([Li(Text('foo')), Li(Text('bar'))])
+    div = Div([Text('foo'), ul])
+    h1 = H1(Text('Oh no, not again!'))
+    img = Img(attr={'src': 'http://i.imgur.com/pfp3T.jpg'})
+    body = Body([h1, img, div])
+    html = Html([head, body])
+    page = Page(html)
+    print(page)
