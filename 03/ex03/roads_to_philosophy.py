@@ -33,7 +33,7 @@ def roads_to_philosophy(path):
         print(title)
         count += 1
 
-        if 'Philosophy' in title:
+        if title == "Philosophy":
             print(f'{count} roads from {visited_titles[0]} to philosophy.')
             break
 
