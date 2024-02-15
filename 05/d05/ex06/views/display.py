@@ -13,8 +13,10 @@ def display(request):
           """
       
       with conn.cursor() as curs:
-          curs.execute(query)
-          movies = curs.fetchall()
+        curs.execute(query)
+        movies = curs.fetchall()
+        if len(movies) == 0:
+            raise psycopg2.Error
       return render(request, 'ex06/display.html', {"movies": movies})
   except:
       return HttpResponse("No data available")

@@ -74,6 +74,8 @@ def display(request):
       with conn.cursor() as curs:
           curs.execute(query)
           movies = curs.fetchall()
+          if len(movies) == 0:
+              raise psycopg2.Error
       return render(request, 'ex04/display.html', {"movies": movies})
   except:
       return HttpResponse("No data available")
@@ -90,6 +92,8 @@ def remove(request):
       with conn.cursor() as curs:
         curs.execute(query)
         movies = curs.fetchall()
+        if len(movies) == 0:
+          raise psycopg2.Error
       context = {'form': RemoveForm(choices=((movie[0], movie[0]) for movie in movies))}
       return render(request, 'ex04/remove.html', context)
     except:

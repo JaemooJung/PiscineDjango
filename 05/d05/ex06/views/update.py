@@ -16,6 +16,8 @@ def update(request):
 			with conn.cursor() as curs:
 				curs.execute(select_query)
 				movies = curs.fetchall()
+				if len(movies) == 0:
+					raise psycopg2.Error
 			context = {'form': UpdateForm(choices=((movie[0], movie[0]) for movie in movies))}
 			return render(request, 'ex06/update.html', context)
 		except:
