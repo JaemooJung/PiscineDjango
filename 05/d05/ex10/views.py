@@ -6,6 +6,15 @@ from django.http import HttpResponse
 
 class Display(View):
   def get(self, request):
+    try:
+      movies = Movies.objects.all()
+      if len(movies) == 0:
+        raise Movies.DoesNotExist
+    except Exception as e:
+      print(e)
+      return HttpResponse("No data available, please use the following command line before use: \
+                           python3 manage.py loaddata static/ex10_initial_data.json")
+    
     form = SearchForm()
     return render(request, 'ex10/display.html', {'form': form})
   
