@@ -9,7 +9,7 @@ class User(AbstractUser):
     return sum([tip.get_upvotes() * 5 - tip.get_downvotes() * 2 for tip in tips])
 
   def can_downvote(self):
-    return self.reputation >= 15
+    return self.is_staff or self.reputation >= 15
   
   def can_delete_tips(self):
-    return self.reputation >= 30
+    return self.is_staff or self.reputation >= 30

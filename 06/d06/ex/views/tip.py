@@ -42,15 +42,18 @@ class Tip(LoginRequiredMixin, View):
     
     def put(self, request: HttpRequest):
         form = VoteForm(None, request.POST)
+        
         if not form.is_valid():
             return self.__error(request, 'PUT', "invalid form")
         is_upvote = True if form.cleaned_data['is_upvote'] == 'true' else False
         try:
             tip = TipModel.objects.get(pk=form.cleaned_data['tip_id'])
-            if not is_upvote \
-                and (tip.author != request.user or not request.user.can_downvote()) \
-                    or request.user.groups.filter(name='blacklist').exists():
-                return self.__error(request, 'PUT', "user has no permission to downvote this tip")
+            if not is_upvote:
+                is_author = tip.author == request.user
+                if not is_author:
+                    is_blacklisted = request.user.groups.filter(name='blacklist').exists()
+                    if is_blacklisted or not request.user.can_downvote():
+                        return self.__error(request, 'PUT', "user has no permission to downvote this tip")
             tip.vote(request.user, is_upvote)
             messages.success(request, 'Vote saved successfully.')
         except Exception as e:
