@@ -9,15 +9,15 @@
 <div id="errorMessages" style="display: none;" class="alert alert-danger"></div>
 
 <div id="userMenu" style="display: none;">
-  <p>Logged as <span id="usernameText"></span>
-  <button id="logoutButton" class="btn btn-primary">Logout</button>
-  </p>
-  <p><a href="{% url 'chatroom_list' %}">Let's go chat!</a></p>
+  <h2>Logged as <span id="usernameText"></span></h2>
+  <p><a href="{% url 'chatroom_list' %}" class="btn btn-primary">Let's go chat!</a></p>
+  <button id="logoutButton" class="btn btn-secondary">Logout</button>
 </div>
 
 <form id="loginForm" method="post" style="display: none;" >
   {% bootstrap_form login_form %}
   <button type="submit" class="btn btn-primary">Login</button>
+  <a href="{% url 'signup' %}" class="btn btn-secondary">Sign up</a>
 </form>
 
 {% endblock %}

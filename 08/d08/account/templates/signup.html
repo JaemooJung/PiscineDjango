@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block title %} Sign up {% endblock title %}
+
+{% block content %}
+    <h1>Sign up</h2>
+    <form class="mt-4" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% bootstrap_button button_type="submit" content="Register" %}
+        <a href="{% url 'account' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}
